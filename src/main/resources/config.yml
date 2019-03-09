@@ -1,0 +1,43 @@
+#
+#   Pinecone AntiCheat Config
+#     Made with ♥ by Baqel
+#
+
+alerts:
+  # The delay between alerts sent to staff.
+  delay:
+    enabled: true
+    millis: 5000
+  # The command sent once an alert is clicked.
+  clickCommand: "/teleport %sender% %cheater%"
+  # Toggle the notification sent when a check is reset after a certain period.
+  checkVioResetBroadcast: true
+# Period when logs are saved to the Pinecone plugin folder.
+logging:
+  enabled: true
+  saveInterval: 5
+  timeUnit: "MINUTES"
+# Unfinished feature.
+gui:
+  # Options: RAINBOW, NONE.
+  animation: "NONE"
+# The bypass permission configuration, set to false by default.
+bypass:
+  enabled: false
+  permission: "pinecone.bypass"
+database:
+  type: "YAML"
+  mongo:
+    name: "Pinecone"
+    address: "localhost"
+    port: 27017
+# Sends a player's alerts to themselves only.
+testmode: false
+# Commands sent to console when a player reaches a executable threshold of a check.
+# Variables: %player%, %check%, %nickname%
+executableCommands:
+  - 'ban %player% Unfair Advantage: %nickname%'
+  - 'pinecone broadcast &7-----------------------------------------------------'
+  - 'pinecone broadcast %prefix%&d%player% &7has been removed from the server for cheating.'
+  - 'pinecone broadcast &7-----------------------------------------------------'
+checks: []

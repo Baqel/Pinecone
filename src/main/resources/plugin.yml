@@ -1,0 +1,14 @@
+name: Pinecone
+version: ${project.version}
+main: xyz.baqel.pinecone.Pinecone
+depend: [ProtocolLib]
+authors: [Baqel]
+description: The anticheat solution that nobody asked for but I made anyway.
+website: https://baqel.xyz/
+commands:
+  pinecone:
+    description: The main anticheat command
+    aliases:
+      - "pine"
+      - "pac"
+      - "w"

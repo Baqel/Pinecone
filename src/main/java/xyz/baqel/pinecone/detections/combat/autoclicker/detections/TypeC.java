@@ -37,13 +37,14 @@ public class TypeC extends Detection {
                 case Packet.Client.LOOK:
                 case Packet.Client.POSITION_LOOK:
                 case Packet.Client.LEGACY_POSITION:
+                case Packet.Client.LEGACY_LOOK:
                 case Packet.Client.LEGACY_POSITION_LOOK:
                 case Packet.Client.FLYING: {
                     if (data.attack) {
                         long time = MathUtils.elapsed(data.lastDeltaAttack);
 
                         if (time > (int) getConfigValues().get("minTimeThreshold") && time < (int) getConfigValues().get("maxTimeThreshold") && data.clicks > (int) getConfigValues().get("minClicks")) {
-                             /*
+                            /*
                             TODO: Get a better and more safer value, so far hasn't falsed for me and flags just fine, but I am sure it can be falsed.
                              */
                             if ((data.vl += (double) getConfigValues().get("vlToAdd")) > (double) getConfigValues().get("threshold")) {
@@ -64,7 +65,7 @@ public class TypeC extends Detection {
 
                     boolean combat = !(boolean) getConfigValues().get("combatOnly") || data.lastAttack.hasNotPassed(5);
                     if (!packet.isPunchingBlock() && combat) {
-                        if (!MathUtils.elapsed(data.lastClickerFlying, (int) getConfigValues().get("deltaToCheck")) /*&& MathUtils.elapsed(data.lastLoopSwing, 70L)*/) { // Commented out until full testing proves it not required.
+                        if (!MathUtils.elapsed(data.lastClickerFlying, (int) getConfigValues().get("deltaToCheck")) /*&& MathUtils.elapsed(data.lastLoopSwing, 70L)*/) { //Commented out until full testing proves it not required.
                             data.lastDeltaAttack = System.currentTimeMillis();
                             data.attack = true;
                         } else if (data.vl > 0) {

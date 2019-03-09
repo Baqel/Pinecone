@@ -10,7 +10,7 @@ public class TypeA extends Detection {
     public TypeA(Check parentCheck, String id, boolean enabled, boolean executable) {
         super(parentCheck, id, enabled, executable);
 
-        addConfigValue("clickThreshold", 30);
+        addConfigValue("clickThreshold", 25);
         addConfigValue("combatOnly", false);
     }
 
@@ -21,7 +21,7 @@ public class TypeA extends Detection {
 
             boolean combat = !(boolean) getConfigValues().get("combatOnly") || data.lastAttack.hasNotPassed(5);
             if (!e.isLookingAtBlock() && combat) {
-                if (data.cpsResetTime.hasNotPassed(10)) {
+                if (data.cpsResetTime.hasPassed(10)) {
                     if (data.clicks > ((int) getConfigValues().get("clickThreshold") / 2)) {
                         flag(data, "cps: " + (data.clicks * 2), 1, true, true);
                     }
@@ -33,5 +33,4 @@ public class TypeA extends Detection {
             }
         }
     }
-
 }

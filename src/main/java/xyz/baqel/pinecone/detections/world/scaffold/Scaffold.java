@@ -12,6 +12,6 @@ public class Scaffold extends Check {
 
         addDetection(new TypeB(this, "Type B", true, true));
         addDetection(new TypeA(this, "Type A", true, false));
-        addDetection(new TypeC(this, "Type C", false, false));
+        addDetection(new TypeC(this, "Type C", true, false));
     }
 }

@@ -1,6 +1,8 @@
 package xyz.baqel.pinecone.detections;
 
 import xyz.baqel.pinecone.detections.combat.autoclicker.AutoClicker;
+import xyz.baqel.pinecone.detections.combat.killaura.KillAura;
+import xyz.baqel.pinecone.detections.combat.reach.Reach;
 import xyz.baqel.pinecone.detections.world.scaffold.Scaffold;
 import xyz.baqel.pinecone.utils.Violation;
 
@@ -21,28 +23,10 @@ public class CheckManager {
     }
 
     public void initializeDetections() {
-//        addCheck(new KillAura());
-//        addCheck(new Reach());
-//        addCheck(new Speed());
-//        addCheck(new Fly());
-//        addCheck(new Step());
-//        addCheck(new Criticals());
-//        addCheck(new Fastbow());
-//        addCheck(new NoFall());
-//        addCheck(new BadPackets());
-//        addCheck(new Regen());
+        addCheck(new KillAura());
         addCheck(new Scaffold());
-//        addCheck(new NoSlowdown());
         addCheck(new AutoClicker());
-//        addCheck(new AimPattern());
-//        addCheck(new Jesus());
-//        addCheck(new Sprint());
-//        addCheck(new SelfHit());
-//        addCheck(new Inventory());
-//        addCheck(new Hand());
-//        addCheck(new Velocity());
-//        addCheck(new Block());
-//        addCheck(new InvalidMotion());
+        addCheck(new Reach());
     }
 
     public List<Check> getChecks() {

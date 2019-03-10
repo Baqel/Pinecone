@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class AutoClicker extends Check {
 
     public AutoClicker() {
-        super("AutoClicker", CheckType.COMBAT, true, true, false, false, 50, TimeUnit.MINUTES.toMillis(3), 20);
+        super("AutoClicker", CheckType.COMBAT, true, true, false, false, 50, TimeUnit.MINUTES.toMillis(10), 20);
 
         addDetection(new TypeA(this, "Type A", true, true));
         addDetection(new TypeB(this, "Type B", true, true));

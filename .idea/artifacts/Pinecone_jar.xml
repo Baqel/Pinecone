@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Pinecone:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/Pinecone_jar</output-path>
+    <root id="archive" name="Pinecone.jar">
+      <element id="module-output" name="pinecone" />
+    </root>
+  </artifact>
+</component>
